@@ -14,7 +14,11 @@ class App extends Component {
     return (
       <div>
         <Router>
-          <Route path="/" component={Main} isAuthenticated={isAuthenticated} dispatch={dispatch} errorMessage={errorMessage}></Route>
+          <Main
+            path="/"
+            isAuthenticated={isAuthenticated}
+            dispatch={dispatch}
+            errorMessage={errorMessage} />
         </Router>
       </div>
     );
@@ -28,9 +32,8 @@ App.propTypes = {
 };
 
 function mapStateToProps(state) {
-  const {auth} = state;
-  const {isAuthenticated, errorMessage} = auth;
 
+  const {isAuthenticated, errorMessage} = state.auth;
   return {isAuthenticated, errorMessage};
 }
 

@@ -7,8 +7,8 @@ import { loginUser, logoutUser } from '../actions';
 export default class Navbar extends Component {
 
   render() {
-    const { dispatch, isAuthenticated, errorMessage } = this.props;
 
+    const { dispatch, isAuthenticated, errorMessage } = this.props;
     return (
       <nav className="navbar">
         <div className="container-fluid">

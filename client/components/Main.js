@@ -8,6 +8,7 @@ export default class Main extends React.Component {
 				super(props);
 		}
 		render() {
+			const {isAuthenticated, errorMessage, dispatch} = this.props;
 				return (
 						<div className="row">
 								<div className="small-centered  small-12 columns text-center">
@@ -17,10 +18,10 @@ export default class Main extends React.Component {
 												workout</p>
 								</div>
 								<Navbar
-										isAuthenticated={this.props.isAuthenticated}
-										errorMessage={this.props.errorMessage}
-										dispatch={this.props.dispatch}/>
-								<Dashboard isAuthenticated={this.props.isAuthenticated}/>
+										isAuthenticated={isAuthenticated}
+										errorMessage={errorMessage}
+										dispatch={dispatch}/>
+								<Dashboard isAuthenticated={isAuthenticated}/>
 								<div>
 										<Link to="/">Home</Link>
 										<Link to="/savedworkout">Workouts</Link>
